@@ -1,0 +1,14 @@
+body{
+	text-align:center;
+	overflow:hidden;
+	margin: 0;
+}
+
+canvas{
+  cursor: grab;
+  cursor: -webkit-grab;
+}
+
+button{
+  cursor: pointer;
+}

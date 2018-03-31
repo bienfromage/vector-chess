@@ -4,6 +4,10 @@ body{
 	margin: 0;
 }
 
+h1{
+  margin: 10px;
+}
+
 canvas{
   cursor: grab;
   cursor: -webkit-grab;
@@ -11,4 +15,16 @@ canvas{
 
 button{
   cursor: pointer;
+  background-color: black;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-style: none;
+  margin: 10px;
+}
+
+button:hover{
+  color: black;
+  background-color: white;
 }

@@ -132,6 +132,9 @@ function reset(){
     player = black;
     opponent = white;
   }
+  
+  mouseItem = null;
+  canvas.style.cursor="-webkit-grab" || "grab";
 }
 
 function listener(event, playerArray, opponentArray){

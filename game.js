@@ -89,6 +89,21 @@ document.getElementById("canvas").onmousemove = function(e){
 };
 
 function flipBoard(){
+  if(mouseItem){
+    if(isWhite)
+      white.push(mouseItem);
+    else
+      black.push(mouseItem);
+      
+    mouseItem = null;
+    
+    
+    if(!!window.chrome && !!window.chrome.webstore)
+        canvas.style.cursor="-webkit-grab";
+    else
+      canvas.style.cursor="grab";
+  }
+  
   for(i = 0; i < white.length; i++){
     white[i].x=(white[i].x-7)*-1;
     white[i].y=(white[i].y-7)*-1;
@@ -171,13 +186,19 @@ function listener(event, playerArray, opponentArray){
       mouseItem.y=pieceY;
       playerArray.push(mouseItem);
       mouseItem = null;
-      canvas.style.cursor="-webkit-grab" || "grab";
+      if(!!window.chrome && !!window.chrome.webstore)
+        canvas.style.cursor="-webkit-grab";
+      else
+        canvas.style.cursor="grab";
     }
   }else{
     for(i = 0; i <playerArray.length; i++){
       if(playerArray[i].x === pieceX && playerArray[i].y === pieceY){
         mouseItem = playerArray.splice(i,1)[0];
-        canvas.style.cursor="-webkit-grabbing" || "grabbing";
+        if(!!window.chrome && !!window.chrome.webstore)
+        canvas.style.cursor="-webkit-grabbing";
+      else
+        canvas.style.cursor="grabbing";
       }
     }
   }
